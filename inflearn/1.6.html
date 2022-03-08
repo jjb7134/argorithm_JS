@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홀 수</title>
+</head>
+
+<body>
+    <script>
+        function solution(arr) {
+            let answer = 0;
+            let min = Number.MAX_SAFE_INTEGER;
+            let arr = [];
+            let x = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 === 1) {
+                    answer += arr[i];
+                    x.push(arr[i]);
+                    if (x[i] < min) min = x[i];
+                }
+            }
+
+            return answer, x;
+        }
+        console.log(solution(12, 77, 38, 41, 53, 92, 85));
+
+//변수 설정 1,홀수들의 합 2,홀수들중 최솟값
+    </script>
+
+    <!-- 정답 1 -->
+    <script>
+        function solution(arr) {
+            let answer = [], sum = 0, min = Number.MAX_SAFE_INTEGER;
+            for (let x of arr) {
+                if (x % 2 === 1) {
+                    sum += x;
+                    if (x < min) min = x;
+                }
+            }
+            answer.push(sum);
+            answer.push(min);
+            return answer;
+        }
+
+        arr = [12, 77, 38, 41, 53, 92, 85];
+        console.log(solution(arr));
+    </script>
+</body>
+
+</html>

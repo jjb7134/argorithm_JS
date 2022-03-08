@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세 수 중 최솟값</title>
+</head>
+<body>
+    <script>
+        function solution(a,b,c){
+            let answer;          //정답 초기화      
+            if(a<b) answer=a;    //a와b를 먼저 비교후 작은값을 answer에 담기   
+            else answer=b;       //
+            if(c<answer) answer=c;  //앞서 비교한 값과 c도 비교후 제일 작은값 담기
+
+            return answer;
+        }
+        console.log(solution(6,5,11)); //콘솔창에서 테스트값을 확인하자
+    </script>
+</body>
+</html>

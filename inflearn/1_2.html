@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼각형 판별하기</title>
+</head>
+<body>
+    <script>
+       function solution (a,b,c){
+  let answer="YES", max;
+  if(a>b) max=a;
+  else max=b;
+  if(c>max) max=c;
+  if((a+b+c)-max <= max) answer="NO"
+  
+  return answer;
+}
+console.log(solution (13,33,17));
+//삼각형 생성조건, 가장긴변이 나머지두변합보다 작아야함.
+// 최댓값 구해서 나머지와 비교후 가능여부 출력하자
+//배운점: 
+// 1. answer에는 한 값만 담자, 이 문제처럼 수를 입력받고 문자열을 출력해야 하면 출력값을 answer에 담자
+// 2.창의적으로 문제를 접근하는게 어려울거같으니 그냥 다 외워버리자...ㅠ
+    </script>
+</body>
+</html>
