@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제 목</title>
+    <title>대문자 찾기</title>
 </head>
 <body>
     <script>
-        function solution(){
-            let answer;          //정답 초기화      
-            
-            return answer;
-        }
-        console.log(solution()); //콘솔창에서 테스트값을 확인하자
+       function solution(s){
+  let answer=0;
+  for(let x of s){
+    if(x===x.toUpperCase()) answer++;
+  }
+  return answer;
+}
+let str = "KoreaTimeGood"
+console.log(solution(str))
     </script>
 </body>
 </html>
