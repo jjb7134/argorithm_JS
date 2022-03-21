@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회의실 배정</title>
+</head>
+
+<body>
+    <script>
+        function solution(m) {
+            //answer에 바로 횟수를 담자 + endtime을 기준으로 두고 초기화해주자
+            let answer = 0;
+            let et = 0;
+            //    정렬이 안돼있는 자리를 기준으로 두고 정렬을 먼저 시켜주자
+            m.sort((a, b) => {
+                if (a[1] === b[1]) return a[0] - b[0];
+                else return a[1] - b[1];
+            })
+
+            for (let i of m) {
+                if (i[0] >= et) {
+                    answer++;
+                    et = i[1];
+                }
+            }
+
+            return answer;
+        }
+        let meeting = [[1, 4], [3, 5], [0, 6],
+        [5, 7], [3, 8], [5, 9], [6, 10],
+        [8, 11], [8, 12], [2, 13], [12, 14]];
+        console.log(solution(meeting));
+    </script>
+</body>
+
+</html>

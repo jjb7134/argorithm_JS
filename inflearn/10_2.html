@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>돌다리 건너기 </title>
+</head>
+
+<body>
+    <script>
+        //문제를 잘 읽어보고 충분히 생각해보자
+        //주의할점은 계단은 몇번째계단까지만이지만 돌다리는 다 건너서 도착지까지
+        //계산해야한다.
+        function solution(s) {
+            let answer;
+            let d = Array.from({ length: s + 2 }, () => 0);
+            //012000000
+            d[1] = 1;
+            d[2] = 2;
+            for (i = 3; i <= s + 1; i++) {
+                d[i] = d[i - 2] + d[i - 1];
+            }
+            answer = d[s + 1]; //돌다리를 다 건너고 도착지에 도착해야함 그래서 +1
+            return answer;
+        }
+
+        console.log(solution(7))
+    </script>
+</body>
+
+</html>
