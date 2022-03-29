@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM</title>
+</head>
+
+<body>
+    <script>
+        function solution(p, time) {
+            let answer = 0;
+            let sum = 0;
+
+            for (let i of time.sort((a, b) => a - b)) {//[1,2,3,3,4]
+                sum += i;
+                answer += sum;
+            }
+            //답안 예시:3+(3+1)+(3+1+4)+(3+1+4+3)+(3+1+4+3+2)
+            return answer;
+        }
+        let time = [1, 2, 2, 3, 3, 3]
+        console.log(solution(5, time));
+    </script>
+</body>
+
+</html>
