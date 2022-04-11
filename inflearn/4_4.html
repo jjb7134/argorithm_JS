@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 졸업선물</title>
+</head>
+
+<body>
+    <script>
+        function solution(yesan, s) {
+            let answer = 0;
+            let n = s.length; //학생수
+            s.sort((a, b) => (a[0] + a[1]) - (b[0] + b[1])); //가격합이 낮은순으로 오름차순정렬
+
+            for (i = 0; i < n; i++) {
+                let nam = yesan - (s[i][0] / 2 + s[i][1]); //반값 할인 경우를 먼저 계산
+                let cnt = 1;
+                for (j = 0; j < n; j++) {
+                    if (j !== i && (s[j][0] + s[j][1]) > nam) break; //애매한 금액이 남으면 탐색 종료
+                    if (j !== i && (s[j][0] + s[j][1]) <= nam) { //반값할인 제외 나머지 제품들 예산과 비교
+                        nam -= (s[j][0] + s[j][1]);
+                        cnt++;
+                    }
+                }
+                answer = Math.max(answer, cnt);
+            }
+            return answer;
+        }
+        let arr = [[6, 6], [2, 2], [4, 3], [4, 5], [10, 3]];
+        console.log(solution(28, arr));
+    </script>
+</body>
+
+</html>
