@@ -17,6 +17,7 @@ function dfs(set, arr, fixed) {
                 set.add(parseInt(newFixed));
             }
             dfs(set, copyArr, newFixed);
+            console.log(`보고싶은 ${dfs}`);
         }
     }
 }

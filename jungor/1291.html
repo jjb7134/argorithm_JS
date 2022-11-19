@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 조건1. 각 부호 사이 공백으로 구분해서 줄 맞추기
+        // 조건2. 구구단 사이는 3개 공백으로
+        // 조건3. 데이터 크기 벗어날 경우 "INPUT ERROR!" 출력
+        // 출력을 나란히 해야하니 이스케이프 문자를 넣어 
+
+        function gugudan(x, y) {
+            // 데이터 크기 벗어날 경우
+            if (x < 2 || x > 9 || y < 2 || y > 9) return console.log("INPUT ERROR!");
+            // if(2> x,y > 9) return console.log("INPUT ERROR!");
+
+            let result = ``;
+
+            for (let i = 1; i < 10; i++) {
+                for (let j = x; j >= y; j--) {
+                    // console.log(`${i} , ${j}`)
+                    // 결과가 1의자리이면 두칸 띄워주기
+                    let mul = i * j;
+                    if (i * j < 10) mul = " " + mul;
+                    else mul = mul;
+
+                    if (j === y) result += `${j} * ${i} = ${mul}`;
+                    else result += `${j} * ${i} = ${mul}   `;
+                    //result += j+'*'+i+"="+ j * i + "\t";
+                }
+                result += "\n";
+            }
+
+
+            return result;
+        }
+
+        // gugudan(1,6);
+        // gugudan(11,5);
+        console.log(gugudan(3, 2));
+
+//x단 y단 을 나란히 한행에 출력
+//이중 포문 돌려서 각 단 출력하기
+
+
+
+    </script>
+</body>
+
+</html>
